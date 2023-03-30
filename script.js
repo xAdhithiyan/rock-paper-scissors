@@ -9,6 +9,8 @@ function getComputerChoice(){
     }
 }
 
+
+// plays one single game
 function playRound(playerSelection,compSelection){
     const x1 = playerSelection.toLowerCase();
     const x2 = compSelection;
@@ -21,26 +23,52 @@ function playRound(playerSelection,compSelection){
     }
 }
 
-function game(){
-    let ans,win = 0 ,lose = 0;
-    while(win < 5 && lose < 5){
-        const playerSelection = prompt("Enter ur choice")
-        const compSelection = getComputerChoice();
-        ans = playRound(playerSelection,compSelection);
-        console.log(ans);
-        if(ans[0] == "2"){
-            lose++;
-        }else if(ans[0] == "3"){
-            win++;
-        }  
+
+//for playing 5 rounds and dispalying winner
+function game(playerSelection,compSelection){
+
+
+    //getting and printing result for a single game
+    let ans = playRound(playerSelection,compSelection)
+    const body = document.querySelector("body");
+    const result = document.createElement("div");
+    result.textContent = ans;
+    body.appendChild(result);
+    
+
+
+    //checking and printing the result for a round(5 games)
+    if(ans[0] == "2"){
+        lose++;
+    }else if(ans[0] == "3"){
+        win++;
     }
-    if(win>lose){
-        return("win");
-    }else{
-        return(lose)
+    if(win == 5){
+        const finalResult = document.createElement("div")
+        finalResult.textContent = "U WIN THIS ROUND"
+        body.appendChild(finalResult)
+        win = 0;
+        lose = 0;
+
+    }else if(lose == 5){
+        const finalResult = document.createElement("div")
+        finalResult.textContent = "U LOSE THIS ROUND"
+        body.appendChild(finalResult)
+        win = 0;
+        lose = 0;
     }
+
+}
+
+function gettingInputs(){
+    const playerSelection = this.classList.value;
+    const compSelection = getComputerChoice();
+    game(playerSelection , compSelection);
 }
 
 
-const finalans = game();
-finalans == "win" ? console.log("U win this round") : console.log("u lose this round");
+let win = 0 ,lose = 0;
+const btns = document.querySelectorAll("button"); 
+btns.forEach(n => n.addEventListener("click", gettingInputs));
+
+console
