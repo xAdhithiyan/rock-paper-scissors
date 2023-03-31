@@ -7,6 +7,7 @@ function getComputerChoice(){
     }else{
         return("scissors");
     }
+
 }
 
 
@@ -22,6 +23,22 @@ function playRound(playerSelection,compSelection){
         return(`3. U Win! ${x1} beats ${x2}`)
     }
 }
+
+
+
+//a button to restart the game
+function refreshingButton(body){
+    const btn = document.createElement("button");
+    btn.textContent = "Play Again";
+    btn.classList.add("resetting")
+    body.appendChild(btn);
+    body.appendChild(document.createElement("hr"))
+    //refreshes the page
+    btn.addEventListener("click" , () => window.location.reload());
+    btns.forEach(n => n.removeEventListener("click", gettingInputs))
+    
+}
+
 
 
 //for playing 5 rounds and dispalying winner
@@ -41,25 +58,42 @@ function game(playerSelection,compSelection){
     //checking and printing the result for a round(5 games)
     if(ans[0] == "2"){
         lose++;
+        document.querySelector(".lose").textContent = `Lose(s) : ${lose}`; 
     }else if(ans[0] == "3"){
         win++;
+        document.querySelector(".win").textContent = `Win(s) : ${win}`; 
     }
     if(win == 5){
-        const finalResult = document.createElement("div")
-        finalResult.textContent = "U WIN THIS ROUND"
-        body.appendChild(finalResult)
+        const finalResult = document.createElement("div");
+        finalResult.textContent = "U WIN THIS ROUND";
+        finalResult.classList.add("won");
+        finalResult.classList.add("finalAns");
+        body.appendChild(finalResult);
+        document.querySelector(".win").classList.add("won");
+
+        body.appendChild(document.createElement("hr"));
+        refreshingButton(body);
         win = 0;
         lose = 0;
 
     }else if(lose == 5){
-        const finalResult = document.createElement("div")
-        finalResult.textContent = "U LOSE THIS ROUND"
-        body.appendChild(finalResult)
+        const finalResult = document.createElement("div");
+        
+        finalResult.textContent = "U LOSE THIS ROUND";
+        finalResult.classList.add("lost");
+        finalResult.classList.add("finalAns");
+        body.appendChild(finalResult);
+        document.querySelector(".lose").classList.add("lost");
+
+        body.appendChild(document.createElement("hr"));
+        refreshingButton(body);
         win = 0;
         lose = 0;
     }
 
 }
+
+
 
 function gettingInputs(){
     const playerSelection = this.classList.value;
