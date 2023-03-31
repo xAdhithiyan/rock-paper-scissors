@@ -1,8 +1,8 @@
 # rock-paper-scissors
 ## Links 
--[Visit the website](https://xadhithiyan.github.io/rock-paper-scissors)
+- [Visit the website](https://xadhithiyan.github.io/rock-paper-scissors)
 
--[Link to the assignment](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)
+- [Link to the assignment](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)
 
 ## About
 A website where the user can play the game of rock-paper-scissors against the computer.
