@@ -33,6 +33,7 @@ function game(playerSelection,compSelection){
     const body = document.querySelector("body");
     const result = document.createElement("div");
     result.textContent = ans;
+    result.style.cssText = "text-align:center; padding:10px; "
     body.appendChild(result);
     
 
@@ -62,8 +63,10 @@ function game(playerSelection,compSelection){
 
 function gettingInputs(){
     const playerSelection = this.classList.value;
-    const compSelection = getComputerChoice();
-    game(playerSelection , compSelection);
+    if(playerSelection){
+        const compSelection = getComputerChoice();
+        game(playerSelection , compSelection);
+    }
 }
 
 

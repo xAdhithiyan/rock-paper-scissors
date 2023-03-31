@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html style="background:grey;">
+<html>
     <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
         <script src="script.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <button class = "rock">Rock</button>
-        <button class = "paper">Paper</button>
-        <button class = "scissors">Scissors</button>
+        <h1>Rock Paper Scissors</h1>
+
+        <div class="main">
+            <div class = "selection">
+                <div style="margin-top:10px; margin-bottom:20px">
+                    <p>Player Selection</p>
+                </div>
+                <div class="selectionBody">
+                    <button class = "rock">Rock</button>
+                    <button class = "paper">Paper</button>
+                    <button class = "scissors">Scissors</button>
+                </div>
+            </div>
+
+            <div style="border:3px solid black"></div>
+            <div class = "selection2">
+                <div style="margin-top:10px; margin-bottom:20px">
+                    <p>Computer Selection</p>
+                </div>
+                <div class="selectionBody2">
+                    <button class = "rock">Rock</button>
+                    <button class = "paper">Paper</button>
+                    <button class = "scissors">Scissors</button>
+                </div>
+            </div>
+        </div>
+
+        <hr/>
+
+        <h2>Score</h2>
+        <div class="Score">
+            <p>Win(s) : 0</p>
+            <p>Lose(s) : 0</p>
+        </div>
+
     </body>
 </html>
