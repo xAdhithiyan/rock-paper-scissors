@@ -5,8 +5,13 @@
     padding:0px;
 }
 html{
-    background-image: url("/home/quent/codes/rock-paper-scissors/images/bg.jpg");
+    background: url("images/bg3.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
 h1 , h2{
     text-align: center;
     margin:20px;
@@ -34,6 +39,7 @@ hr{
     flex:1;
 }
 
+
 button{
     font-size:20px;
     padding:10px;
@@ -48,11 +54,15 @@ button{
     background-color: black;
     color:rgb(188, 188, 188);
 }
-
-.tranition{
+.resetting{
+    display:block;
+    margin: 20px auto;
+}
+.transition{
     background-color: black;
     color:rgb(188, 188, 188);
 }
+
 
 .main{
     display:flex;
@@ -87,14 +97,10 @@ button{
 }
 
 .finalAns{
-    margin:20px;
-    margin-left:200px;
-    margin-right:200px;
+    display: block;
+    margin: 20px auto;
     padding:10px;
+    width:500px;
     text-align: center;
     font-size:22px;
-}
-.resetting{
-    display:block;
-    margin: 20px auto;
 }

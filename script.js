@@ -39,11 +39,19 @@ function refreshingButton(body){
     
 }
 
+//to add transition for computer selected button
+function transitionButton(tAns){
+    let transtions  = document.querySelector(`.${tAns}`)
+    transtions.classList.add("transition")
+    transtions.addEventListener("transitionend" ,() => transtions.classList.remove("transition"))
+}
 
 
 //for playing 5 rounds and dispalying winner
 function game(playerSelection,compSelection){
 
+    
+    transitionButton(`${compSelection}1`)
 
     //getting and printing result for a single game
     let ans = playRound(playerSelection,compSelection)
@@ -104,8 +112,7 @@ function gettingInputs(){
 }
 
 
-let win = 0 ,lose = 0;
-const btns = document.querySelectorAll("button"); 
+let tAns , win = 0 ,lose = 0;
+const btns = document.querySelectorAll(".selectionBody button"); 
 btns.forEach(n => n.addEventListener("click", gettingInputs));
 
-console
