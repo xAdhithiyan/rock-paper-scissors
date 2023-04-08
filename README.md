@@ -5,7 +5,7 @@
 - [Link to the assignment](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)
 
 ## About
-A website where the user can play the game of rock-paper-scissors against the computer. Concepts of DOM manipulation and eventListeners were used.
+A website where the user can play the game of rock-paper-scissors against the computer. It was made for an assignment in the course The Odin Project. Concepts of DOM manipulation and eventListeners were used.
 
 ## Screenshots
 ![Screenshot from 2023-04-01 01-21-22](https://user-images.githubusercontent.com/113228161/229221037-4095e935-c32d-4e8d-a123-35733544c734.png)
